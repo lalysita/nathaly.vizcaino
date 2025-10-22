@@ -1,0 +1,27 @@
+# .github/workflows/ci.yml
+name: CI Pipeline para Python
+
+on:
+  push:
+    branches:
+      - vizcaino 
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ejecutar tests con pytest
+        run: pytest
