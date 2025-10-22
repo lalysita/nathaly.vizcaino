@@ -9,7 +9,7 @@ def sumar(a, b):
 
 @app.route('/')
 def hola_mundo():
-    return 'Adiós, Mundo!', 200 # Este cambio hará que la prueba falle
+   return 'Hola, Mundo!', 200 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
