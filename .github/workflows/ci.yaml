@@ -26,6 +26,13 @@ jobs:
       - name: Ejecutar tests con pytest
         run: pytest
 
+      - name: Debug - Listar archivos
+        run: |
+          echo "Directorio actual:"
+          pwd
+          echo "Archivos encontrados:"
+          ls -R
+
       - name: pruebas de ssh con el servidor
         uses: appleboy/ssh-action@v1
         with:
@@ -48,4 +55,5 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT  }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD  }}
-          
+          source: "stack.yml"
+          target: "/home/${{  secrets.VPS_USER  }}/automatizar"
