@@ -31,5 +31,12 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST  }}
           port: ${{ secrets.VPS_SSH_PORT  }}
-          user: ${{ secrets.VPS_USER }}
+          username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD  }}
+          script: | 
+            echo " Conexion exitosa desde GitHub Actions"
+            pwd
+            date
+            whoami
+            hostname
+            uptime
