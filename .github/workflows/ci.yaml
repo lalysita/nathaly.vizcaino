@@ -25,3 +25,11 @@ jobs:
 
       - name: Ejecutar tests con pytest
         run: pytest
+
+      - name: pruebas de ssh con el servidor
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST  }}
+          port: ${{ secrets.VPS_SSH_PORT  }}
+          user: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD  }}

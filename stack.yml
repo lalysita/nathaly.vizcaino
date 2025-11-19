@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nathaly:
-    image: nathaly:1.0.1
+    image: ghcr.io/byronmoreno/nueces:1.0.1
     build: .
     deploy:
       replicas: 1
